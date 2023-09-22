@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import TempActual from './Components/TempActual';
+import MaxMin from './Components/MaxMin';
+import HourlyTemp from './Components/HourlyTemp';
 
 function App() {
+  const temp = 20;
+  const day = 'Lunes';
+  const time = '17:00';
+
+  const max = '29';
+  const min = '13';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Clima">
+      <div className="col Main">
+        <div className="temp-actual">
+          <TempActual temp={temp} day={day} time={time} />
+        </div>
+        <div className="max-min">
+          <MaxMin max={max} min={min} />
+        </div>
+      </div>
+      <div className="col contenedor-extra">
+        <div className="por-hora">
+            <HourlyTemp />
+        </div>
+        <div className="extras">
+          Extras
+        </div>  
+      </div>
     </div>
   );
 }
