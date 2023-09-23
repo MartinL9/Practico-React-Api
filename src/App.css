@@ -1,24 +1,48 @@
 .Clima {
-  height: 99.8vh;
-  border: solid 1px red;
-  display: flex;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5px;
+  background-color: rgb(14, 125, 125);
+}
+
+.Clima > * {
+  margin: 5px;
+  border-radius: 15px;
+  border: solid 1px orange;
 }
 
 .temp-actual {
-  height: 60vh;
+  height: 50vh;
   width: 27vw;
-  border: solid 1px red;
 }
 
 .max-min {
-  height: 39.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
   width: 27vw;
-  border: solid 1px red;
+  padding-top: 10rem;
 }
 
 .por-hora {
-  height: 35vh;
-  width: 72.8vw;
-  border: solid 1px red;
+  height: 32vh;
+  width: 70.2vw;
   box-sizing: border-box;
+}
+
+.highlight-header {
+  margin-bottom: 7.6vh;
+}
+
+.container-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+.container-highlights > div {
+  margin: auto;
 }
