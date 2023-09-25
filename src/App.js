@@ -29,13 +29,13 @@ function App() {
           <MinTemp min={min} />
         </div>
       </div>
-      <div className="contenedor-extra">
+      <div className="container-extra">
         <div className="por-hora">
           <HourlyTemp />
         </div>
         <>
           <h2 className='highlight-header'>Destacados</h2>
-          <div className="container-highlights">
+          <div className='container-highlights'>
             <UVIndexHighlight />
             <WindHighlight />
             <PressureHighlight />

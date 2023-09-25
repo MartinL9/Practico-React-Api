@@ -19,13 +19,13 @@ return (
             </div>
             ))}
         </div>
-        <div className="hour-column" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+        <HourContainer>
             {hours.map((hour) => (
             <div key={hour} className="hour-item">
                 {hour}
             </div>
             ))}
-        </div>
+        </HourContainer>
         </TempColumnDiv>
     </>
 );
@@ -35,6 +35,15 @@ export default HourlyTemp;
 
 // Styles
 
-const TempColumnDiv = styled.div `
+const TempColumnDiv = styled.div`
+    border-radius: 10px;
+    height: 13.625rem;
     background-color: rgb(235,194,112);
+`
+
+const HourContainer = styled.div`
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-evenly;
+    margin-top: 5rem;
 `
