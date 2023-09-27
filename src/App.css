@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
 html {
   background-color: rgb(102,166,176);
 }
@@ -7,7 +9,6 @@ html {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 5px;
-  background-color: rgb(14, 125, 125);
 }
 
 .Clima > * {
@@ -16,6 +17,9 @@ html {
 }
 
 .temp-actual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 40vh;
   width: 27vw;
 }
@@ -24,7 +28,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 15rem;
+  padding-top: 16rem;
 }
 
 .container-extra {
@@ -38,10 +42,13 @@ html {
 }
 
 .highlight-header {
-  margin-bottom: 1vh;
+  font-size: 2.1rem;
+  color: white;
+  margin: 2% 0 1%;
 }
 
 .container-highlights {
+  font-family: 'Mooli', sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;

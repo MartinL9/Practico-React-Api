@@ -1,9 +1,10 @@
 import { ContainerHL } from "../Styles/GlobalStyles";
+import { PHighlights } from "../Styles/GlobalStyles";
 
 function HumidityHighlight() {
     return (
         <ContainerHL>
-            <p>Humedad</p>
+            <PHighlights>HUMEDAD</PHighlights>
             <span>12%</span>
             <p>Normal</p>
         </ContainerHL>

@@ -1,9 +1,10 @@
 import { ContainerHL } from "../Styles/GlobalStyles";
+import { PHighlights } from "../Styles/GlobalStyles";
 
 function PressureHighlight() {
     return (
         <ContainerHL>
-            <p>Presión</p>
+            <PHighlights>PRESÍON</PHighlights>
             <span>1006.4 mb</span>
         </ContainerHL>
     );

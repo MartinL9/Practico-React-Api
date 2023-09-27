@@ -1,14 +1,15 @@
 import { ContainerMax } from '../Styles/GlobalStyles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { PMinMaxTemp } from '../Styles/GlobalStyles';
+import { PMaxMin } from '../Styles/GlobalStyles';
+import { SymbolCelsius } from '../Styles/GlobalStyles'
+import { IconMaxMin } from '../Styles/GlobalStyles';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 
 function MaxTemp({ max }) {
     return (
         <ContainerMax>
-            <p>{max}°C</p>
-            <p>Máx 
-                <FontAwesomeIcon icon={faSun} />
-            </p>
+            <PMinMaxTemp>{max}<SymbolCelsius>°C</SymbolCelsius></PMinMaxTemp>
+            <PMaxMin>Máx <IconMaxMin icon={faSun} /></PMaxMin>
         </ContainerMax>
     );
 }
