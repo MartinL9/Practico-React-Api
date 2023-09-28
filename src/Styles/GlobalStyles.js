@@ -3,18 +3,41 @@ import styled from "styled-components";
 
 // Contenedor Descatados Styles
 export const ContainerHL = styled.div`
+    display: flex;
     height: 24.6vh;
     width: 26.5rem;
     border: solid 1px white;
     border-radius: 10px;
     background-color: white;
+    align-items: center;
 `;
 
 // Componentes Descatados Styles
-export const PHighlights = styled.p`
+export const HeaderHighlights = styled.p`
     font-size: 2rem;
     margin: 5% 5% 0;
     color: rgb(150, 150, 150);
+    align-self: baseline;
+`
+
+export const SHighlights = styled.span`
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgb(52,132,139);
+`
+
+export const SHighlightsUnits = styled.span`
+    font-size: 2rem;
+    font-weight: 100;
+    color: rgb(52,132,139);
+`
+
+export const PHighlights = styled.p`
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(52,132,139);
+    align-self: end;
+    margin: 0 0 5% -20%
 `
 
 // MaxMin Components Styles

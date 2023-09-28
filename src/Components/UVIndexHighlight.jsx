@@ -1,11 +1,10 @@
-import { ContainerHL } from "../Styles/GlobalStyles";
-import { PHighlights } from "../Styles/GlobalStyles";
+import { ContainerHL, HeaderHighlights, SHighlights } from "../Styles/GlobalStyles";
 
 function UVIndexHighlight() {
     return (
         <ContainerHL>
-            <PHighlights>ÍNDICE UV</PHighlights>
-            <span>6</span>
+            <HeaderHighlights>ÍNDICE UV</HeaderHighlights>
+            <SHighlights>6</SHighlights>
         </ContainerHL>
     );
 }

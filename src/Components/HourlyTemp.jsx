@@ -52,7 +52,7 @@ const TempDiv = styled.div`
     flex-direction: column;
 
     .temperature-item {
-        margin: 1rem 1rem 1rem;
+        margin: 1.5rem 1.5rem 1rem;
     }
 `
 
@@ -60,5 +60,5 @@ const HourContainer = styled.div`
     display: flex; 
     flex-direction: row; 
     justify-content: space-evenly;
-    margin-top: 1rem;
+    margin-top: -1rem;
 `

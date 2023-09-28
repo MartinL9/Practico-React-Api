@@ -1,14 +1,19 @@
-import { ContainerHL } from "../Styles/GlobalStyles";
-import { PHighlights } from "../Styles/GlobalStyles";
+import { ContainerHL, HeaderHighlights, SHighlights, SHighlightsUnits, PHighlights } from "../Styles/GlobalStyles";
+import styled from "styled-components";
 
 function HumidityHighlight() {
     return (
         <ContainerHL>
-            <PHighlights>HUMEDAD</PHighlights>
-            <span>12%</span>
-            <p>Normal</p>
+            <HeaderHighlights>HUMEDAD</HeaderHighlights>
+            <SHighlightsHumidity>12<SHighlightsUnits>%</SHighlightsUnits></SHighlightsHumidity>
+            <PHighlights>Normal</PHighlights>
         </ContainerHL>
     );
 }
 
 export default HumidityHighlight;
+
+// Styles 
+const SHighlightsHumidity = styled(SHighlights)`
+    margin: 0 0 0 -45%; 
+`
