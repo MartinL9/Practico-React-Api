@@ -1,11 +1,11 @@
 import { ContainerHL, HeaderHighlights, SHighlights, PHighlights, SHighlightsUnits } from "../Styles/GlobalStyles";
 import styled from "styled-components";
 
-function VisibilityHighlight() {
+function VisibilityHighlight({ visibility }) {
     return (
         <ContainerHL>
             <HeaderHighlights>VISIBILIDAD</HeaderHighlights>
-            <SHighlightsVisibility>14.48 <SHighlightsUnits>km</SHighlightsUnits></SHighlightsVisibility>
+            <SHighlightsVisibility>{visibility}<SHighlightsUnits>km</SHighlightsUnits></SHighlightsVisibility>
             <PHighlightsVisibility>Promedio</PHighlightsVisibility>
         </ContainerHL>
     );
@@ -20,5 +20,5 @@ const SHighlightsVisibility = styled(SHighlights)`
 `
 
 const PHighlightsVisibility = styled(PHighlights)`
-    margin: 0 0 5% -50%;
+    margin: 0 0 5% -45%;
 `

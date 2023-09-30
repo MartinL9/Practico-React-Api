@@ -1,11 +1,11 @@
 import { ContainerHL, SHighlightsUnits, HeaderHighlights, SHighlights} from "../Styles/GlobalStyles";
 import styled from "styled-components";
 
-function PressureHighlight() {
+function PressureHighlight({ pressure }) {
     return (
         <ContainerHL>
             <HeaderHighlights>PRESÍON</HeaderHighlights>
-            <SHighlightsPressure>1006.4 <SHighlightsUnits>mb</SHighlightsUnits></SHighlightsPressure>
+            <SHighlightsPressure>{pressure}<SHighlightsUnits>hPa</SHighlightsUnits></SHighlightsPressure>
         </ContainerHL>
     );
 }

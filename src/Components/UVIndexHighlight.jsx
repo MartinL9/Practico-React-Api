@@ -1,10 +1,11 @@
 import { ContainerHL, HeaderHighlights, SHighlights } from "../Styles/GlobalStyles";
+import React from "react";
 
-function UVIndexHighlight() {
+function UVIndexHighlight({ uvIndex }) {
     return (
         <ContainerHL>
             <HeaderHighlights>ÍNDICE UV</HeaderHighlights>
-            <SHighlights>6</SHighlights>
+            <SHighlights>{uvIndex}</SHighlights>
         </ContainerHL>
     );
 }

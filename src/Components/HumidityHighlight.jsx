@@ -1,11 +1,11 @@
 import { ContainerHL, HeaderHighlights, SHighlights, SHighlightsUnits, PHighlights } from "../Styles/GlobalStyles";
 import styled from "styled-components";
 
-function HumidityHighlight() {
+function HumidityHighlight({ humidity }) {
     return (
         <ContainerHL>
             <HeaderHighlights>HUMEDAD</HeaderHighlights>
-            <SHighlightsHumidity>12<SHighlightsUnits>%</SHighlightsUnits></SHighlightsHumidity>
+            <SHighlightsHumidity>{humidity}<SHighlightsUnits>%</SHighlightsUnits></SHighlightsHumidity>
             <PHighlights>Normal</PHighlights>
         </ContainerHL>
     );

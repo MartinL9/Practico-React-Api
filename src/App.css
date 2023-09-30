@@ -20,7 +20,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 40vh;
+  height: 65.7vh;
   width: 27vw;
 }
 
@@ -28,7 +28,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 16rem;
 }
 
 .container-extra {

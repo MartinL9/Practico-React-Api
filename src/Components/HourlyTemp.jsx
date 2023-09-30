@@ -1,5 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { 
+    Chart,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend, 
+    } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+// {jsonData["hourly"]["temperature_2m"].filter((value, index) => [0, 3, 6, 9, 12].includes(index))}
 
 function HourlyTemp() {
 const hours = [
@@ -8,24 +20,45 @@ const hours = [
 ];
 const temperatures = [40, 20, 0];
 
+Chart.register(CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend);
+
+const chartData = {
+    labels: hours,
+    datasets: [
+        {
+            label: 'Temperaturas (°C)',
+            data: temperatures,
+            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            borderColor: 'rgba(75, 192, 192, 1)', 
+            borderWidth: 1,
+        },
+    ],
+};
+
 return (
     <>
         <HeaderHT>Hoy</HeaderHT>
         <TempColumnDiv>
-        <TempDiv>
-            {temperatures.map((temp, index) => (
-            <div key={index} className="temperature-item">
-                {temp}°C
-            </div>
-            ))}
-        </TempDiv>
-        <HourContainer>
-            {hours.map((hour) => (
-            <div key={hour} className="hour-item">
-                {hour}
-            </div>
-            ))}
-        </HourContainer>
+            <TempDiv>
+                {temperatures.map((temp, index) => (
+                <div key={index} className="temperature-item">
+                    {temp}°C
+                </div>
+                ))}
+            </TempDiv>
+            <HourContainer>
+                {hours.map((hour) => (
+                <div key={hour} className="hour-item">
+                    {hour}
+                </div>
+                ))}
+            </HourContainer>
+            <Bar data={chartData} />
         </TempColumnDiv>
     </>
 );

@@ -1,11 +1,11 @@
 import { ContainerHL, HeaderHighlights, SHighlights, SHighlightsUnits } from "../Styles/GlobalStyles";
 import styled from "styled-components";
 
-function WindHighlight() {
+function WindHighlight({ wind }) {
     return (
         <ContainerHL>
             <HeaderHighlights>VIENTO</HeaderHighlights>
-            <SHighlightsWind>11.12 <SHighlightsUnits>km/h</SHighlightsUnits></SHighlightsWind>
+            <SHighlightsWind>{wind}<SHighlightsUnits>km/h</SHighlightsUnits></SHighlightsWind>
         </ContainerHL>
     );
 }
