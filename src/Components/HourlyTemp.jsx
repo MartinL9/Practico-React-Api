@@ -1,64 +1,41 @@
+import { useState } from 'react';
 import React from 'react';
 import styled from 'styled-components';
-import { 
-    Chart,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend, 
-    } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
 
-// {jsonData["hourly"]["temperature_2m"].filter((value, index) => [0, 3, 6, 9, 12].includes(index))}
-
-function HourlyTemp() {
+function HourlyTemp({ tempHour }) {
 const hours = [
-    '00:00', '3:00', '6:00', '9:00', '12:00',
+    '00:00', '03:00', '06:00', '09:00', '12:00',
     '15:00', '18:00', '21:00', '00:00'
 ];
-const temperatures = [40, 20, 0];
 
-Chart.register(CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend);
-
-const chartData = {
-    labels: hours,
-    datasets: [
-        {
-            label: 'Temperaturas (°C)',
-            data: temperatures,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)', 
-            borderWidth: 1,
-        },
-    ],
-};
+const hourlyTemperatures = tempHour;
+const [hoveredTemp, setHoveredTemp] = useState(null);
 
 return (
     <>
         <HeaderHT>Hoy</HeaderHT>
         <TempColumnDiv>
-            <TempDiv>
-                {temperatures.map((temp, index) => (
-                <div key={index} className="temperature-item">
-                    {temp}°C
-                </div>
-                ))}
-            </TempDiv>
+            <TempContainer>
+                <TempDiv>40°C</TempDiv>
+                <TempDiv>20°C</TempDiv>
+                <TempDiv0>0°C</TempDiv0>
+            </TempContainer>
             <HourContainer>
-                {hours.map((hour) => (
-                <div key={hour} className="hour-item">
-                    {hour}
-                </div>
+                {hours.map((hour, index) => (
+                    <div 
+                        key={hour} 
+                        className="hour-item"
+                        onMouseEnter={() => setHoveredTemp(hourlyTemperatures[index])}
+                        onMouseLeave={() => setHoveredTemp(null)}
+                    >
+                        <TempBar style={{ height: `${hourlyTemperatures[index]/ 4}rem` }} />
+                        {hour}
+                        {hoveredTemp !== null && (
+                            <TempPopup>{hoveredTemp}°C</TempPopup>
+                        )}
+                    </div>
                 ))}
             </HourContainer>
-            <Bar data={chartData} />
         </TempColumnDiv>
     </>
 );
@@ -80,18 +57,44 @@ const TempColumnDiv = styled.div`
     background-color: rgb(235,194,112);
 `
 
-const TempDiv = styled.div`
+const TempContainer = styled.div`
     display: flex;
     flex-direction: column;
+`
 
-    .temperature-item {
-        margin: 1.5rem 1.5rem 1rem;
-    }
+const TempDiv = styled.div`
+    margin: 1.5rem 1.5rem 1.5rem;
+`
+
+const TempDiv0 = styled(TempDiv)`
+    margin-left: 2rem;
 `
 
 const HourContainer = styled.div`
     display: flex; 
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-evenly;
-    margin-top: -1rem;
+    margin-top: -1.5rem;
 `
+
+const TempBar = styled.div`
+    border-radius: 5px;
+    background-color: white; 
+    width: 20px; 
+    margin: auto;
+    position: absolute;
+    bottom: 70%;
+    transform: translateX(40%);
+`
+
+const TempPopup = styled.div`
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: black;
+`;

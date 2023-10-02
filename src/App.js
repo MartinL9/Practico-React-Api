@@ -26,6 +26,7 @@ function App() {
   });
 
   const [highlightValues, setHighlightValues] = useState({
+    tempHour: dataWeather.hourly.temperature_2m.filter((value, index) => [0, 3, 6, 9, 12, 15, 18, 21, 23].includes(index)),
     wind: dataWeather.current_weather.windspeed,
     uvIndex: dataWeather.daily.uv_index_max,
     humidity: dataWeather.hourly.relativehumidity_2m[0],
@@ -47,7 +48,8 @@ function App() {
       </div>
       <div className="container-extra">
         <div className="por-hora">
-          <HourlyTemp />
+          <HourlyTemp tempHour={highlightValues.tempHour}/>
+          {console.log("Estas son las temp en horas:" + highlightValues.tempHour)} 
         </div>
         <>
           <h2 className='highlight-header'>Destacados</h2>
