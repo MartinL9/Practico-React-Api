@@ -11,3 +11,6 @@ function UVIndexHighlight({ uvIndex }) {
 }
 
 export default UVIndexHighlight;
+
+// Styles 
+

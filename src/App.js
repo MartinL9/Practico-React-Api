@@ -49,7 +49,6 @@ function App() {
       <div className="container-extra">
         <div className="por-hora">
           <HourlyTemp tempHour={highlightValues.tempHour}/>
-          {console.log("Estas son las temp en horas:" + highlightValues.tempHour)} 
         </div>
         <>
           <h2 className='highlight-header'>Destacados</h2>

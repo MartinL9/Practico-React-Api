@@ -16,7 +16,7 @@ export const ContainerMax = styled.div`
     width: 13vw;    
     border: solid 1px orange;
     border-radius: 10px 0 0 10px;
-    background-color: rgb(214,146,81);
+    background: linear-gradient(20deg, rgb(227,83,82), rgb(211,179,82));
     color: white;
 `;
 
@@ -86,5 +86,25 @@ export const PHighlights = styled.p`
     font-weight: 800;
     color: rgb(52,132,139);
     align-self: end;
-    margin: 0 0 5% -20%
+    margin: auto auto 5% -85%;
+`
+
+export const BarDot = styled.div`
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    height: 10rem; 
+    width: 1.5rem; 
+    margin: auto 5% auto 0;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: rgb(213,182,73);
+        border-radius: 50%;
+        border: solid 5px rgb(195,133,63);
+        top: ${({ dotposition }) => `${(10 - 1.5) * (1 - dotposition / 100)}rem`}; 
+        margin-left: -5px;
 `

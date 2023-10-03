@@ -54,7 +54,9 @@ const HeaderHT = styled.h2`
 const TempColumnDiv = styled.div`
     border-radius: 10px;
     height: 13.625rem;
-    background-color: rgb(235,194,112);
+    background: linear-gradient(10deg, rgb(211, 138, 70), rgb(235, 194, 112));
+    width: 100%; /* Esto ajusta el ancho del gradiente al 100% del elemento */
+}
 `
 
 const TempContainer = styled.div`
