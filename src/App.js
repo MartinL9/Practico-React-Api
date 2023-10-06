@@ -13,10 +13,11 @@ import dataWeather from './dataWeather.json'
 import { useState } from 'react';
 
 function App() {
+
   const [dailyTemp, setDailyTemp] = useState({
     temp: dataWeather.current_weather.temperature,
-    day: 'Lunes',
-    time: '17:00',
+    day: dataWeather.current_weather.time.split("T")[0],
+    time: dataWeather.current_weather.time.split("T")[1],
     weatherCode: dataWeather.current_weather.weathercode,
   })
 
@@ -33,6 +34,7 @@ function App() {
     pressure: dataWeather.hourly.pressure_msl[0],
     precipitation: dataWeather.hourly.precipitation_probability[0],
     visibility: (dataWeather.hourly.visibility[0] / 1000).toFixed(2),
+    windDirection: dataWeather.hourly.winddirection_10m[0],
   })
 
   return (
@@ -54,7 +56,7 @@ function App() {
           <h2 className='highlight-header'>Destacados</h2>
           <div className='container-highlights'>
             <UVIndexHighlight uvIndex={highlightValues.uvIndex} />
-            <WindHighlight wind={highlightValues.wind} />
+            <WindHighlight wind={highlightValues.wind} windDirection={highlightValues.windDirection}/>
             <PressureHighlight pressure={highlightValues.pressure} />
             <HumidityHighlight humidity={highlightValues.humidity} />
             <VisibilityHighlight visibility={highlightValues.visibility} />
