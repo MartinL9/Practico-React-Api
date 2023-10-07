@@ -5,7 +5,7 @@ import styled from 'styled-components';
 function HourlyTemp({ tempHour }) {
 const hours = [
     '00:00', '03:00', '06:00', '09:00', '12:00',
-    '15:00', '18:00', '21:00', '00:00'
+    '15:00', '18:00', '21:00', '00:00.'
 ];
 
 const hourlyTemperatures = tempHour;
@@ -54,7 +54,7 @@ const HeaderHT = styled.h2`
 const TempColumnDiv = styled.div`
     border-radius: 10px;
     height: 13.625rem;
-    background: linear-gradient(10deg, rgb(211, 138, 70), rgb(235, 194, 112));
+    background: linear-gradient(10deg, rgb(211, 138, 70), rgb(247,220,129));
     width: 100%;
 }
 `

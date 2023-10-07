@@ -34,8 +34,6 @@ function WindHighlight({ wind, windDirection }) {
         WindIcon = <WiDirectionUp size={90} />;
     }
 
-    console.log(windDirection);
-
     return (
         <ContainerHL>
             <HeaderHighlights>VIENTO</HeaderHighlights>

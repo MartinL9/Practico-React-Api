@@ -2,7 +2,7 @@ import { ContainerHL, HeaderHighlights, SHighlights, PHighlights, SHighlightsUni
 import styled from "styled-components";
 
 function getPrecipitationLevel(precipitation) {
-    if (precipitation < 2) {
+    if (precipitation <= 2) {
         return "Débiles";
     } else if (precipitation >= 3 && precipitation <= 15) {
         return "Moderadas";
@@ -24,8 +24,8 @@ function PrecipitationHighlight({ precipitation }) {
             <SHighlightsPrecip>{precipitation}
                 <SHighlightsUnits>%</SHighlightsUnits>
             </SHighlightsPrecip>
-            <PHighlightsPrecip>{precipitationLevel}</PHighlightsPrecip>
-            <BarDotPrec dotposition={precipitation} />
+            <PHighlightsPrecip customprecipitationlevel={precipitationLevel} >{precipitationLevel}</PHighlightsPrecip>
+            <BarDotPrec dotposition={precipitation} customprecipitationlevel={precipitationLevel} />
         </ContainerHL>
     );
 }
@@ -38,9 +38,23 @@ const SHighlightsPrecip = styled(SHighlights)`
 `
 
 const PHighlightsPrecip = styled(PHighlights)`
-    margin: 0 0 5% -15%;
+    margin: ${({ customprecipitationlevel }) =>
+            customprecipitationlevel === "Fuertes" ||
+            customprecipitationlevel === "Muy Fuertes" ||
+            customprecipitationlevel === "Torrenciales"
+            ? "0 0 5% -24%"
+            : "0 0 5% -15%"
+    };
 `
 
-const BarDotPrec = styled (BarDot)`
-    margin-left: 49%;
+const BarDotPrec = styled(BarDot)`
+    margin-left: ${({ customprecipitationlevel }) => 
+        customprecipitationlevel === "Moderadas" ||
+        customprecipitationlevel === "Muy Fuertes" ||
+        customprecipitationlevel === "Torrenciales"
+        ? "52%"
+        : customprecipitationlevel === "Fuertes"
+        ? "64%"
+        : "62%"
+    };
 `

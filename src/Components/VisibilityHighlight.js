@@ -23,7 +23,7 @@ function VisibilityHighlight({ visibility }) {
                 {visibility}
                 <SHighlightsUnits>km</SHighlightsUnits>
             </SHighlightsVisibility>
-            <PHighlightsVisibility visibilityLevel={visibilityLevel}>
+            <PHighlightsVisibility visibilitylevel={visibilityLevel}>
                 {visibilityLevel}
             </PHighlightsVisibility>
         </ContainerHL>
@@ -39,5 +39,5 @@ const SHighlightsVisibility = styled(SHighlights)`
 `
 
 const PHighlightsVisibility = styled(PHighlights)`
-    margin: 0 0 5% ${props => (props.visibilityLevel === "Baja" ? "-40%" : "-45%")};
+    margin: 0 0 5% ${props => (props.visibilitylevel === "Baja" ? "-40%" : "-45%")};
 `
