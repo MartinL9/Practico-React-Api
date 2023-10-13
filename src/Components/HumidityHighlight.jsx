@@ -13,6 +13,7 @@ function getHumidityLevel(humidity) {
 
 function HumidityHighlight({ humidity }) {
     const humidityLevel = getHumidityLevel(humidity);
+    const TextHumidity = getHumidityLevel(humidity);
 
     return (
         <ContainerHL>
@@ -21,7 +22,7 @@ function HumidityHighlight({ humidity }) {
                 {humidity}
                 <SHighlightsUnits>%</SHighlightsUnits>
             </SHighlightsHumidity>
-            <PHighlights>{humidityLevel}</PHighlights>
+            <PHighlightsHumidity customtext={TextHumidity}>{humidityLevel}</PHighlightsHumidity>
             <BarDot dotposition={humidity} />
         </ContainerHL>
     );
@@ -31,5 +32,14 @@ export default HumidityHighlight;
 
 // Styles 
 const SHighlightsHumidity = styled(SHighlights)`
-    margin: auto auto auto -45%; 
+    margin: 5% 0 0 -25%; 
+`
+
+const PHighlightsHumidity = styled(PHighlights)`
+    margin-left: ${({ customtext }) =>
+        customtext === "Bajo" ||
+        customtext === "Alta"
+        ? "-25%"
+        : "-30%"
+    }
 `

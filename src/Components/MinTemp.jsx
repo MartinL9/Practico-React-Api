@@ -1,29 +1,16 @@
-import { ContainerMin, PMinMaxTemp, PMaxMin, SymbolCelsius, IconMaxMin } from '../Styles/GlobalStyles';
-import styled from 'styled-components';
-import { WiMoonWaxingCrescent2, WiStars } from 'weather-icons-react';
+import { ContainerMin, PMinMaxTemp, PMaxMin, SymbolCelsius } from '../Styles/GlobalStyles';
+import { WiMoonset } from 'weather-icons-react';
 
 
 function MinTemp({ min }) {
     return (
         <ContainerMin>
+            <PMaxMin>Mín</PMaxMin>
             <PMinMaxTemp>{min}<SymbolCelsius>°C</SymbolCelsius></PMinMaxTemp>
-            <PMaxMin>
-                Mín 
-                <IconMaxMin>
-                    <WiMoonWaxingCrescent2 size={100} color="white" />
-                    <StarsIconMin>
-                        <WiStars size= {100} color="white" />
-                    </StarsIconMin>
-                </IconMaxMin>
-            </PMaxMin>
+            <WiMoonset size={100} color="white" />
         </ContainerMin>
     );
 }
 
 export default MinTemp;
 
-// Styles 
-const StarsIconMin = styled(IconMaxMin)`
-    left: 8%;
-    bottom: 0%;
-`

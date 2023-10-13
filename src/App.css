@@ -4,48 +4,44 @@ html {
   background: linear-gradient(20deg, rgb(53,131,143), rgb(164,213,220));
 }
 
-.Clima {
-  margin: 3.75rem 2.5rem;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 5px;
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 10px;
 }
 
-.temp-actual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 65.7vh;
-  width: 27vw;
+.half-width {
+  flex: 1;
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: auto;
+}
+
+.Clima {
+  border-color: green;
 }
 
 .max-min {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.container-extra {
-  width: 68.4vw;
-}
-
-.por-hora {
-  height: 29vh;
-  width: 68.2vw;
-  box-sizing: border-box;
+  margin: 1rem 0;
 }
 
 .highlight-header {
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: white;
-  margin: 2% 0 1%;
+  margin: 1% 0 1%;
+  text-align: center;
 }
 
 .container-highlights {
   font-family: 'Mooli', sans-serif;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: 1fr;
-  row-gap: 10px;
-  column-gap: 8px;
+  row-gap: 5px;
+  column-gap: 5px;
 }

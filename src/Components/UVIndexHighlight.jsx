@@ -35,7 +35,7 @@ function UVIndexHighlight({ uvIndex }) {
                     styles={buildStyles({
                     rotation: 1 / 2 + 1 / 5 ,
                     strokeLinecap: "round",
-                    trailColor: "#eee",
+                    trailColor: "#ccc",
                     pathColor: `rgb(247,223,123)`,
                     textSize: '20px',
                     textColor: 'rgb(52,132,139)'
@@ -52,40 +52,24 @@ export default UVIndexHighlight;
 // Styles
 
 const ContainerBar = styled.div`
-    height: 15vh;
-    width: 15vw;
-    position: absolute;
-    margin-left: 4%;
+    height: 10vh;
+    padding-right: 1vw;
 `
 const SHighlightsUvIndex = styled(SHighlights)`
-    position: absolute;
-    top: ${({ customtextuv }) => 
-        customtextuv === "Bajo" ||
-        customtextuv === "Alto" ||
-        customtextuv === "Extremo"
-        ? "30%"
-        : customtextuv === "Moderado"
-        ? "40%"
-        : "35%"
-        };
+    position: relative;
+    top: -55%;
     left: ${({ customtextuv }) =>  
-        customtextuv === "Bajo" ||
-        customtextuv === "Alto"
-        ? "34%"
+        customtextuv === "Bajo"
+        ? "33%"
+        : customtextuv === "Alto"
+        ? "35%"
         : customtextuv === "Moderado"
-        ? "17%"
+        ? "14%"
         : customtextuv === "Muy Alto"
-        ? "20%"
+        ? "17%"
         : customtextuv === "Extremo"
-        ? "23%"
+        ? "20%"
         : ""
     };
-    font-size: 40px;
+    font-size: 20px;
 `
-
-// Bajo left: 34%;
-// Moderado left: 17%;
-// Alto left: 34%;
-// Muy alto left: 20%;
-// Extremo left: 23%;
-    

@@ -3,16 +3,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 function HourlyTemp({ tempHour }) {
-const hours = [
-    '00:00', '03:00', '06:00', '09:00', '12:00',
-    '15:00', '18:00', '21:00', '00:00.'
-];
+    const hours = [
+        '00:00', '03:00', '06:00', '09:00', '12:00',
+        '15:00', '18:00', '21:00', '00:00 '
+    ];
 
-const hourlyTemperatures = tempHour;
-const [hoveredTemp, setHoveredTemp] = useState(null);
+    const hourlyTemperatures = tempHour;
+    const [hoveredTemps, setHoveredTemps] = useState({});
+
+    const handleTempHover = (hour, temperature) => {
+        setHoveredTemps((prevHoveredTemps) => ({
+            ...prevHoveredTemps,
+            [hour]: temperature,
+        }));
+    };
+
+    const handleTempLeave = (hour) => {
+        setHoveredTemps((prevHoveredTemps) => {
+        const { [hour]: _, ...rest } = prevHoveredTemps;
+        return rest;
+        });
+    };
 
 return (
-    <>
+    <Container>
         <HeaderHT>Hoy</HeaderHT>
         <TempColumnDiv>
             <TempContainer>
@@ -22,39 +36,45 @@ return (
             </TempContainer>
             <HourContainer>
                 {hours.map((hour, index) => (
-                    <div 
-                        key={hour} 
-                        className="hour-item"
-                        onMouseEnter={() => setHoveredTemp(hourlyTemperatures[index])}
-                        onMouseLeave={() => setHoveredTemp(null)}
+                    <HourItem
+                    key={index}
+                    onMouseEnter={() => handleTempHover(hour, hourlyTemperatures[index])}
+                    onMouseLeave={() => handleTempLeave(hour)}
                     >
-                        <TempBar style={{ height: `${hourlyTemperatures[index]/ 4}rem` }} />
+                        <TempBar style={{ height: `${hourlyTemperatures[index]/ 6}rem` }}>
+                            {hoveredTemps[hour] !== undefined && (
+                                <TempPopup>{hoveredTemps[hour]}°C</TempPopup>
+                            )}
+                        </TempBar>
                         {hour}
-                        {hoveredTemp !== null && (
-                            <TempPopup>{hoveredTemp}°C</TempPopup>
-                        )}
-                    </div>
+                    </HourItem>
                 ))}
             </HourContainer>
         </TempColumnDiv>
-    </>
+    </Container>
 );
 }
 
 export default HourlyTemp;
 
 // Styles
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 const HeaderHT = styled.h2`
     color: white;
-    font-size: 2.1rem;
-    margin: 0 0 1%;
+    font-size: 2rem;
+    margin: -1% 0 1%;
 `
 
 const TempColumnDiv = styled.div`
+    display: flex;
     border-radius: 10px;
-    height: 13.625rem;
-    background: linear-gradient(10deg, rgb(211, 138, 70), rgb(247,220,129));
+    height: 10rem;
+    background: linear-gradient(7deg, rgba(218,140,82,1) 30%, rgba(247,220,129,1) 100%);
     width: 100%;
 }
 `
@@ -62,38 +82,45 @@ const TempColumnDiv = styled.div`
 const TempContainer = styled.div`
     display: flex;
     flex-direction: column;
+    max-width: 3vw;
 `
 
 const TempDiv = styled.div`
-    margin: 1.5rem 1.5rem 1.5rem;
+    margin: 1rem 0 1rem 1rem;
 `
 
 const TempDiv0 = styled(TempDiv)`
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 `
 
 const HourContainer = styled.div`
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: -1.5rem;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 0.5rem;
+`
+
+const HourItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const TempBar = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 5px;
-    background-color: white; 
-    width: 20px; 
-    margin: auto;
-    position: absolute;
-    bottom: 70%;
-    transform: translateX(40%);
+    background-color: white;
+    width: 20px;
+    position: relative;
+    bottom: 0;
+    padding: 0;
 `
 
 const TempPopup = styled.div`
-    position: absolute;
-    top: 35%;
-    left: 65%;
-    transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.9);
     padding: 0.25rem 0.5rem;
     border-radius: 5px;

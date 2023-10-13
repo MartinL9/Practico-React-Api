@@ -35,9 +35,9 @@ export default VisibilityHighlight;
 // Styles 
 
 const SHighlightsVisibility = styled(SHighlights)`
-    margin: 0 0 0 -48%;
+    margin: 5% 0 0 -38%;
 `
 
 const PHighlightsVisibility = styled(PHighlights)`
-    margin: 0 0 5% ${props => (props.visibilitylevel === "Baja" ? "-40%" : "-45%")};
+    margin: 0 0 1% ${props => props.visibilitylevel === "Baja" ? "-40%" : (props.visibilitylevel === "Promedio" ? "-47%" : "-42%")};
 `

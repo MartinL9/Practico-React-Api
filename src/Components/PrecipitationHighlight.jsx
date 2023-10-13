@@ -34,27 +34,27 @@ export default PrecipitationHighlight;
 
 // Styles 
 const SHighlightsPrecip = styled(SHighlights)`
-    margin: 0 0 0 -61%;
+    margin: 5% 0 0 -40%;
 `
 
 const PHighlightsPrecip = styled(PHighlights)`
     margin: ${({ customprecipitationlevel }) =>
-            customprecipitationlevel === "Fuertes" ||
+            customprecipitationlevel === "Moderadas" ||
             customprecipitationlevel === "Muy Fuertes" ||
             customprecipitationlevel === "Torrenciales"
-            ? "0 0 5% -24%"
-            : "0 0 5% -15%"
+            ? "0 0 1% -30%"
+            : "0 0 1% -22%"
     };
 `
 
 const BarDotPrec = styled(BarDot)`
+    margin-right: 0;
     margin-left: ${({ customprecipitationlevel }) => 
-        customprecipitationlevel === "Moderadas" ||
-        customprecipitationlevel === "Muy Fuertes" ||
+        customprecipitationlevel === "Moderadas"
+        ? "15%"
+        : customprecipitationlevel === "Muy Fuertes" ||
         customprecipitationlevel === "Torrenciales"
-        ? "52%"
-        : customprecipitationlevel === "Fuertes"
-        ? "64%"
-        : "62%"
+        ? "13%"
+        : "20%"
     };
 `

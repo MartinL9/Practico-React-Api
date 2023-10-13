@@ -1,11 +1,12 @@
-import { ContainerMax, PMinMaxTemp, PMaxMin, SymbolCelsius, IconMaxMin} from '../Styles/GlobalStyles';
-import { WiDaySunny } from 'weather-icons-react';
+import { ContainerMax, PMinMaxTemp, PMaxMin, SymbolCelsius } from '../Styles/GlobalStyles';
+import {WiSunrise } from 'weather-icons-react';
 
 function MaxTemp({ max }) {
     return (
         <ContainerMax>
+            <PMaxMin>Máx</PMaxMin>
             <PMinMaxTemp>{max}<SymbolCelsius>°C</SymbolCelsius></PMinMaxTemp>
-            <PMaxMin>Máx <IconMaxMin><WiDaySunny size={100} color="white" /></IconMaxMin></PMaxMin>
+            <WiSunrise size={100} color="white" />
         </ContainerMax>
     );
 }
