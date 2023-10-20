@@ -15,21 +15,21 @@ function WindHighlight({ wind, windDirection }) {
     let WindIcon = "";
 
     if (windDirection >= 0 && windDirection <= 15) {
-        WindIcon = <WiDirectionUp size={90} />;
+        WindIcon = <WiDirectionUp size={70} />;
     } else if (windDirection >= 16 && windDirection <= 68) {
         WindIcon = <WiDirectionUpRight size={80} />;
     } else if (windDirection >= 69 && windDirection <= 113) {
         WindIcon = <WiDirectionRight size={80} />;
     } else if (windDirection >= 114 && windDirection <= 158) {
-        WindIcon = <WiDirectionDownRight size={90} />;
+        WindIcon = <WiDirectionDownRight size={85} />;
     } else if (windDirection >= 159 && windDirection <= 203) {
         WindIcon = <WiDirectionDown size={80} />;
     } else if (windDirection >= 204 && windDirection <= 235) {
-        WindIcon = <WiDirectionDownLeft size={90} />;
+        WindIcon = <WiDirectionDownLeft size={85} />;
     } else if (windDirection >= 236 && windDirection <= 290) {
-        WindIcon = <WiDirectionLeft size={95} />;
+        WindIcon = <WiDirectionLeft size={80} />;
     } else if (windDirection >= 291 && windDirection <= 335) {
-        WindIcon = <WiDirectionUpLeft size={95} />;
+        WindIcon = <WiDirectionUpLeft size={80} />;
     } else {
         WindIcon = <WiDirectionUp size={90} />;
     }

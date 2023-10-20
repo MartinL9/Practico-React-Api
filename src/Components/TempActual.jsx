@@ -45,12 +45,13 @@ function TempActual({ temp, day, time, weathercode }) {
     }
 
     const weatherIcon = weatherIcons[weathercode];
+
     return (
         <TempActualContainer>
             <TemperatureInfo>
                 <IconTempAContainer>{weatherIcon}</IconTempAContainer>
                 <div>
-                    <TimeDay>Córdoba, Argentina</TimeDay>
+                    <TimeDay>Córdoba,<br /> Argentina</TimeDay>
                     <TimeDay>{time}</TimeDay>
                     <TimeDay>{day}</TimeDay>
                 </div>
@@ -103,6 +104,7 @@ const TimeDay = styled.div`
     font-weight: 600;
     color: white;
     text-align: center;
+    font-family: 'Mooli', sans-serif;
 `;
 
 
@@ -115,5 +117,5 @@ const CelsiusActualTemp = styled(SymbolCelsius)`
 
 const IconTempAContainer = styled.div`
     display: flex;
-    margin-bottom: -25px;
+    margin-bottom: -3%;
 `

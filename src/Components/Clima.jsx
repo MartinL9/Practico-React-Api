@@ -17,7 +17,7 @@
             <div className='clima'>
                 <div className="Main">
                     <div className="temp-actual">
-                        <TempActual temp={dailyTemp.temp} day={dailyTemp.day} time={dailyTemp.time} weathercode={dailyTemp.weatherCode} />
+                        <TempActual temp={dailyTemp.temp} day={dailyTemp.formattedTime} time={dailyTemp.time} weathercode={dailyTemp.weatherCode} />
                     </div>
                     <div className="max-min">
                         <MaxTemp max={maxMinT.maxT} />
