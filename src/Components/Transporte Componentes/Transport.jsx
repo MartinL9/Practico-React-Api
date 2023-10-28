@@ -10,7 +10,6 @@ function Transport(props) {
     const handleSelectedLineChange = (newSelectedLine) => {
         setSelectedLine(newSelectedLine);
 
-        // Si se selecciona una línea, muestra TripInfo
         setTripInfoVisible(!!newSelectedLine);
     };
 

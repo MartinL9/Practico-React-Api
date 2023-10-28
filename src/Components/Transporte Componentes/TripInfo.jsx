@@ -8,7 +8,7 @@ const TripInfo = ({ selectedTripInfo }) => {
         return (
             <TripInfoContainer>
                 <div>
-                    <strong>Destino Seleccionado: </strong> No se ha seleccionado un destino.
+                    <strong>Destino Seleccionado: </strong> No se ha encontrado colectivo disponible a destino.
                 </div>
                 <div>
                     <strong>Cantidad de Colectivos: </strong> {busCount}

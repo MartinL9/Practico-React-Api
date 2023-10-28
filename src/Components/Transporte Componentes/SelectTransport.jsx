@@ -67,7 +67,7 @@
                             onInputChange={input => setInputValue(input.toUpperCase())}
                             inputValue={inputValue}
                             options={tripHeadsignOptions}
-                            placeholder="Seleccione una Linea"
+                            placeholder="Seleccione un destino"
                             styles={customStyles}
                         />
                     </SelectContainer>

@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Aplicación de Pronóstico de Clima y Monitoreo de Colectivos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta es una aplicación que proporciona información sobre el clima de Córdoba,Argentina y permite monitorear la ubicación de colectivos en tiempo real en Buenos Aires. Combina datos de pronóstico de clima y datos de seguimiento de colectivos para brindar una experiencia informativa y útil.
 
-## Available Scripts
+## Contenido
 
-In the project directory, you can run:
+- [Vista General](#vista-general)
+- [Instrucciones de Uso](#instrucciones-de-uso)
+- [Créditos](#créditos)
 
-### `npm start`
+## Vista General
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La aplicación está compuesta por varios componentes, incluyendo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **App:**El componente principal de la aplicación que maneja la recuperación de datos de clima y colectivos, y muestra componentes dichos componentes y Loading.
 
-### `npm test`
+- **Clima:** Muestra información actual sobre el clima de Córdoba, incluyendo temperatura actual, humedad, velocidad del viento, dirección del viento, precipitación, índice UV y más. Además, proporciona un pronóstico de temperatura máxima y mínima para el día actual y temperatura por hora.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Transporte:** Permite seleccionar un destino y muestra en tiempo real la ubicación de los colectivos a ese destino en un mapa. También muestra información detallada sobre la línea seleccionada.
 
-### `npm run build`
+- **Loading:** Un componente que se muestra durante la carga de datos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instrucciones de Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Soon
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Créditos
 
-### `npm run eject`
+Esta aplicación utiliza datos de las siguientes fuentes:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### API de Transporte de Buenos Aires
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Sitio Web:** [Buenos Aires Desarrollo Urbano](https://buenosaires.gob.ar/desarrollourbano/transporte/apitransporte)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Open Meteo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Sitio Web:** [Open Meteo](https://open-meteo.com/en/docs)
