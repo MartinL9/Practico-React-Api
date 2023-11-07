@@ -6,6 +6,7 @@ Esta es una aplicación que proporciona información sobre el clima de Córdoba,
 
 - [Vista General](#vista-general)
 - [Instrucciones de Uso](#instrucciones-de-uso)
+- [Bugs/Problemas Conocidos](#bugsproblemas-conocidos)
 - [Créditos](#créditos)
 
 ## Vista General
@@ -22,7 +23,37 @@ La aplicación está compuesta por varios componentes, incluyendo:
 
 ## Instrucciones de Uso
 
-Soon
+### Dashboard de Clima
+
+El dashboard de clima proporciona información detallada sobre el pronóstico del tiempo para la ciudad que elijas:
+
+1. Puedes usar el campo de búsqueda para encontrar información meteorológica para cualquier ubicación en Córdoba o cualquier ciudad.
+
+2. Para buscar el pronóstico de una localidad específica, ingresa el nombre de la localidad en el campo de búsqueda y la búsqueda se realizará automáticamente. 
+
+### Mapa de Colectivos
+
+El mapa de colectivos te permite seleccionar un destino y ver la ubicación de los colectivos que se dirigen hacia allí en tiempo real. Sigue estos pasos:
+
+1. Puedes usar menu desplegable en Colectivos para ver todos los destinos disponibles.
+
+2. Puedes escribir tu destino deseado y se mostrará en el menú desplegable.
+
+3. Al seleccionar un destino, se mostrarán los colectivos disponibles en esa ruta.
+
+4. Puedes seleccionar un colectivo para ver su línea o agencia, además de otra información. 
+
+## Bugs/Problemas Conocidos
+
+A continuación, se detallan algunos problemas conocidos que los usuarios pueden encontrar al utilizar la aplicación:
+
+### Error de Búsqueda al Ingresar un País en el Campo de Búsqueda de Clima
+
+- **Descripción:** Cuando los usuarios intentan buscar un país en el campo de búsqueda de Clima, se produce un error en la solicitud a la API y no se obtienen datos de pronóstico.
+- **Estado:** Pendiente de solución
+
+- **Descripción:** Se ha intentado implementar un filtro para evitar la búsqueda de países en el campo de búsqueda de Clima, pero la búsqueda sigue produciendo un error en la solicitud a la API.
+- **Estado:** Pendiente de solución
 
 ## Créditos
 
