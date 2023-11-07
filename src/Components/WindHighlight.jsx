@@ -31,7 +31,7 @@ function WindHighlight({ wind, windDirection }) {
     } else if (windDirection >= 291 && windDirection <= 335) {
         WindIcon = <WiDirectionUpLeft size={80} />;
     } else {
-        WindIcon = <WiDirectionUp size={90} />;
+        WindIcon = <WiDirectionUp size={70} />;
     }
 
     return (

@@ -15,17 +15,21 @@ function getPrecipitationLevel(precipitation) {
     }
 }
 
-function PrecipitationHighlight({ precipitation }) {
-    const precipitationLevel = getPrecipitationLevel(precipitation);
+function PrecipitationHighlight({ precipitation, hour }) {
+    const hourRaw = hour ? parseInt(hour.split(":")[0], [10]) : null;
+    
+    const probOfRain = precipitation[hourRaw];
+    
+    const precipitationLevel = getPrecipitationLevel(probOfRain);
 
     return (
         <ContainerHL>
             <HeaderHighlights>PRECIPITACIÓN</HeaderHighlights>
-            <SHighlightsPrecip>{precipitation}
+            <SHighlightsPrecip>{probOfRain}
                 <SHighlightsUnits>%</SHighlightsUnits>
             </SHighlightsPrecip>
             <PHighlightsPrecip customprecipitationlevel={precipitationLevel} >{precipitationLevel}</PHighlightsPrecip>
-            <BarDotPrec dotposition={precipitation} customprecipitationlevel={precipitationLevel} />
+            <BarDotPrec dotposition={probOfRain} customprecipitationlevel={precipitationLevel} />
         </ContainerHL>
     );
 }
@@ -42,7 +46,7 @@ const PHighlightsPrecip = styled(PHighlights)`
             customprecipitationlevel === "Moderadas" ||
             customprecipitationlevel === "Muy Fuertes" ||
             customprecipitationlevel === "Torrenciales"
-            ? "0 0 1% -30%"
+            ? "0 0 1% -38%"
             : "0 0 1% -22%"
     };
 `
@@ -54,7 +58,7 @@ const BarDotPrec = styled(BarDot)`
         ? "15%"
         : customprecipitationlevel === "Muy Fuertes" ||
         customprecipitationlevel === "Torrenciales"
-        ? "13%"
+        ? "7%"
         : "20%"
     };
 `

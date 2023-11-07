@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Thermometer from 'react-thermometer-component'
 import { SymbolCelsius } from "../Styles/GlobalStyles";
@@ -16,8 +15,10 @@ import {
     WiHail,
     WiThunderstorm
 } from 'weather-icons-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
 
-function TempActual({ temp, day, time, weathercode }) {
+function TempActual({ temp, day, time, isDay, selectedLocation, weathercode, locationQuery, setLocationQuery, locationError }) {
     const weatherIcons = {
         0: <WiDaySunny size={170} color="#FFD700"/>,
         1: <WiDaySunnyOvercast size={170} color="#FFD700" />,
@@ -50,14 +51,26 @@ function TempActual({ temp, day, time, weathercode }) {
         <TempActualContainer>
             <TemperatureInfo>
                 <IconTempAContainer>{weatherIcon}</IconTempAContainer>
-                <div>
-                    <TimeDay>Córdoba,<br /> Argentina</TimeDay>
+                {locationError && <ErrorMessage>{locationError}</ErrorMessage>}
+                <div>   
+                    <TimeDay>
+                        <IconInput icon={faMagnifyingGlassLocation} />
+                        <input 
+                            type="text" 
+                            placeholder="Buscar lugar"
+                            value={locationQuery}
+                            onChange={(e) => setLocationQuery(e.target.value)}
+                            className="InputStyleTemp"
+                        />
+                        <br /> 
+                        {selectedLocation.country}
+                    </TimeDay>
                     <TimeDay>{time}</TimeDay>
                     <TimeDay>{day}</TimeDay>
                 </div>
             </TemperatureInfo>
                 <Thermometer
-                    theme="dark"
+                    theme={isDay === 1 ? "dark" : "light"}
                     value={temp}
                     max="40"
                     steps="4"
@@ -69,7 +82,6 @@ function TempActual({ temp, day, time, weathercode }) {
                     {temp}
                     <CelsiusActualTemp>°C</CelsiusActualTemp>
                 </Temperature>
-            
         </TempActualContainer>
     );
 }
@@ -81,7 +93,7 @@ export default TempActual;
 const TempActualContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `;
 
 const TemperatureInfo = styled.div`
@@ -97,6 +109,7 @@ const Temperature = styled.span`
     display: flex;
     align-items: center;
     position: relative;
+    margin: auto;
 `;
 
 const TimeDay = styled.div`
@@ -107,6 +120,10 @@ const TimeDay = styled.div`
     font-family: 'Mooli', sans-serif;
 `;
 
+const IconInput = styled(FontAwesomeIcon)`
+    font-size: 2.2rem;
+    color: white;
+`
 
 const CelsiusActualTemp = styled(SymbolCelsius)`
     position: relative  ;
@@ -119,3 +136,8 @@ const IconTempAContainer = styled.div`
     display: flex;
     margin-bottom: -3%;
 `
+
+const ErrorMessage = styled.div`
+    color: red;
+    font-size: 1.2rem;
+`;

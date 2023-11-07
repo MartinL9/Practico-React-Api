@@ -94,7 +94,6 @@
 
     const SelectContainer = styled.div`
         padding: 5px;
-        cursor: pointer;
         position: relative;
         z-index: 2;
     `;

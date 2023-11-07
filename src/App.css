@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
 
-html {
-  background: linear-gradient(20deg, rgb(53,131,143), rgb(164,213,220));
+.background-day {
+  background: linear-gradient(20deg, rgb(53, 131, 143), rgb(164, 213, 220));
+}
+
+.background-night {
+  background:rgba(48,56,65,1);
+  color: white;
 }
 
 .container {
@@ -13,13 +18,8 @@ html {
 
 .half-width {
   flex: 1;
-  border: 1px solid #ccc;
   padding: 5px 10px 10px 10px;
   overflow: auto;
-}
-
-.Clima {
-  border-color: green;
 }
 
 .max-min {
@@ -48,4 +48,18 @@ html {
 .leaflet-container {
   width: 51.4vw; 
   height: 58.8vh;
+}
+
+.InputStyleTemp {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  font-family: 'Mooli', sans-serif;
+  border: none;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+  width: 50%;
+  margin-right: 7%;
 }
