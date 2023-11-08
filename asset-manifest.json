@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Practico-React-Api/static/css/main.aa30a830.css",
-    "main.js": "/Practico-React-Api/static/js/main.2ffad934.js",
+    "main.css": "/Practico-React-Api/static/css/main.eee3071e.css",
+    "main.js": "/Practico-React-Api/static/js/main.21ac67b1.js",
     "static/js/787.01f48bee.chunk.js": "/Practico-React-Api/static/js/787.01f48bee.chunk.js",
     "static/media/presion.svg": "/Practico-React-Api/static/media/presion.4f48adc0b52c8dcfea6e809427840bf4.svg",
     "index.html": "/Practico-React-Api/index.html",
-    "main.aa30a830.css.map": "/Practico-React-Api/static/css/main.aa30a830.css.map",
-    "main.2ffad934.js.map": "/Practico-React-Api/static/js/main.2ffad934.js.map",
+    "main.eee3071e.css.map": "/Practico-React-Api/static/css/main.eee3071e.css.map",
+    "main.21ac67b1.js.map": "/Practico-React-Api/static/js/main.21ac67b1.js.map",
     "787.01f48bee.chunk.js.map": "/Practico-React-Api/static/js/787.01f48bee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa30a830.css",
-    "static/js/main.2ffad934.js"
+    "static/css/main.eee3071e.css",
+    "static/js/main.21ac67b1.js"
   ]
 }
