@@ -82,18 +82,22 @@
         background-color: rgb(48,56,65);
         padding: 10px;
         width: 50.59vw;  
-        display: flex;
-        justify-content: space-between;
-        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     `;
 
     const Title = styled.h1`
-        margin: 0;
+        margin: 0 0 0 23%;
         color: white;
+        text-align: center;
     `;
 
     const SelectContainer = styled.div`
         padding: 5px;
         position: relative;
         z-index: 2;
+        text-align: right;
     `;

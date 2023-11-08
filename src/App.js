@@ -150,7 +150,7 @@ function App() {
             maxMinT={maxMinT}
             highlightValues={highlightValues}
           />
-          <div className='half-width'>
+          <div className='halfWidth'>
             <Transport
               transportData={transportData}
               selectedLine={selectedLine}

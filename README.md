@@ -13,7 +13,7 @@ Esta es una aplicación que proporciona información sobre el clima de Córdoba,
 
 La aplicación está compuesta por varios componentes, incluyendo:
 
-- **App:**El componente principal de la aplicación que maneja la recuperación de datos de clima y colectivos, y muestra componentes dichos componentes y Loading.
+- **App:** El componente principal de la aplicación que maneja la recuperación de datos de clima y colectivos, y muestra componentes dichos componentes y Loading.
 
 - **Clima:** Muestra información actual sobre el clima de Córdoba, incluyendo temperatura actual, humedad, velocidad del viento, dirección del viento, precipitación, índice UV y más. Además, proporciona un pronóstico de temperatura máxima y mínima para el día actual y temperatura por hora.
 
@@ -29,7 +29,7 @@ El dashboard de clima proporciona información detallada sobre el pronóstico de
 
 1. Puedes usar el campo de búsqueda para encontrar información meteorológica para cualquier ubicación en Córdoba o cualquier ciudad.
 
-2. Para buscar el pronóstico de una localidad específica, ingresa el nombre de la localidad en el campo de búsqueda y la búsqueda se realizará automáticamente. 
+2. Para buscar el pronóstico de una localidad específica, ingresa el nombre de la localidad en el campo de búsqueda y se realizará automáticamente la búsqueda. 
 
 ### Mapa de Colectivos
 

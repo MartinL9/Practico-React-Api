@@ -29,6 +29,13 @@
             };
         }, []);
 
+        useEffect(() => {
+            if (mapRef.current) {
+                const centerAndZoom = calculateCenterAndZoom(transportData);
+                mapRef.current.setView(centerAndZoom.center, centerAndZoom.zoom);
+            }
+        }, [transportData]);
+
         if (!isLoading) {
             if (!transportData || !Array.isArray(transportData)) {
                 return (
@@ -36,7 +43,7 @@
                         <ImgContainer src='https://cdn-icons-png.flaticon.com/512/8182/8182827.png' alt='API icon'></ImgContainer>
                         <LoadingText>No se pudo alcanzar la API.</LoadingText>
                     </>
-                )
+                );
             }
         }
 
@@ -86,6 +93,10 @@
 
             if (maxLatDistance <= 0.1 || maxLngDistance <= 0.1) {
                 zoom = 13;
+            } else {
+                const latZoom = Math.floor(Math.log2(360 / maxLatDistance)) - 1;
+                const lngZoom = Math.floor(Math.log2(360 / maxLngDistance)) - 1;
+                zoom = Math.min(latZoom, lngZoom);
             }
 
             return {
@@ -93,20 +104,12 @@
                 zoom: zoom,
             };
         }
-
+        
         return (
             <div>
                 <MapContainerStyled 
-                    center={
-                        filteredData.length > 0 
-                        ? calculateCenterAndZoom(filteredData).center 
-                        : [-34.635376640219384, -58.534557284064064]
-                    } 
-                    zoom={
-                        filteredData.length > 0 
-                        ? calculateCenterAndZoom(filteredData).zoom 
-                        : 11
-                    } 
+                    center={[-34.635376640219384, -58.534557284064064]}
+                    zoom={11} 
                     scrollWheelZoom={true} 
                     ref={mapRef}
                 >
@@ -121,6 +124,7 @@
                                     <p>Línea: {item.route_short_name}</p>
                                     <p>Destino: {item.trip_headsign}</p>
                                     <p>ID Ruta: {item.route_id}</p>
+                                    <p>Velocidad: {`${(item.speed * 3.6).toFixed(2)} km/h`}</p>
                                 </Popup>
                             </Marker>
                     ))}
