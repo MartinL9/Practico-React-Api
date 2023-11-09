@@ -43,10 +43,11 @@ const SHighlightsPrecip = styled(SHighlights)`
 
 const PHighlightsPrecip = styled(PHighlights)`
     margin: ${({ customprecipitationlevel }) =>
-            customprecipitationlevel === "Moderadas" ||
             customprecipitationlevel === "Muy Fuertes" ||
             customprecipitationlevel === "Torrenciales"
             ? "0 0 1% -38%"
+            : customprecipitationlevel === "Moderadas"
+            ? "0 0 1% -30%"
             : "0 0 1% -22%"
     };
 `

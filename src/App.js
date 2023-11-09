@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     fetchWeatherData(locationQuery);
   }, [locationQuery]);
-
+  
   useEffect(() => {
     if (weatherData && weatherData.current && weatherData.current.is_day === 0) {
       setBackgroundClass('background-night');
@@ -143,9 +143,9 @@ function App() {
         <div className='container'>
           <Clima
             locationError={locationError}
-            locationQuery={locationQuery}
-            setLocationQuery={setLocationQuery}
+            setLocationError={setLocationError}
             selectedLocation={selectedLocation}
+            fetchWeatherData={fetchWeatherData}
             dailyTemp={dailyTemp}
             maxMinT={maxMinT}
             highlightValues={highlightValues}

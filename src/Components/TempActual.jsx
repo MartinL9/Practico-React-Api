@@ -1,3 +1,4 @@
+import { useState, useCallback } from "react";
 import styled from "styled-components";
 import Thermometer from 'react-thermometer-component'
 import { SymbolCelsius } from "../Styles/GlobalStyles";
@@ -17,8 +18,9 @@ import {
 } from 'weather-icons-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
+import Countries from './Countries.json';
 
-function TempActual({ temp, day, time, isDay, selectedLocation, weathercode, locationQuery, setLocationQuery, locationError }) {
+function TempActual({ temp, day, time, isDay, selectedLocation, weathercode, locationError, setLocationError, fetchWeatherData }) {
     const weatherIcons = {
         0: <WiDaySunny size={170} color="#FFD700"/>,
         1: <WiDaySunnyOvercast size={170} color="#FFD700" />,
@@ -47,6 +49,31 @@ function TempActual({ temp, day, time, isDay, selectedLocation, weathercode, loc
 
     const weatherIcon = weatherIcons[weathercode];
 
+    const [searchInput, setSearchInput] = useState('Córdoba');
+
+    const normalize = (text) => {
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const handleKeyDown = useCallback(
+        (e) => {
+            if (e.key === 'Enter') {
+                const normalizedInput = normalize(searchInput).toLocaleLowerCase('es-ES'); // Normaliza y convierte a minúsculas
+                const isCountry = Countries.map(country => normalize(country).toLocaleLowerCase('es-ES')).includes(normalizedInput);
+                
+                if(isCountry){
+                    setLocationError('Es un país, no se realizará la búsqueda.');
+                } else {
+                    fetchWeatherData(searchInput);
+                }
+            }
+        }, [fetchWeatherData, searchInput, setLocationError]
+    );
+
+    const handleInputChange = useCallback((e) => {
+        setSearchInput(e.target.value);
+    }, []);
+
     return (
         <TempActualContainer>
             <TemperatureInfo>
@@ -58,8 +85,9 @@ function TempActual({ temp, day, time, isDay, selectedLocation, weathercode, loc
                         <input 
                             type="text" 
                             placeholder="Buscar lugar"
-                            value={locationQuery}
-                            onChange={(e) => setLocationQuery(e.target.value)}
+                            value={searchInput}
+                            onChange={handleInputChange}
+                            onKeyDown={handleKeyDown}
                             className="InputStyleTemp"
                         />
                         <br /> 
@@ -138,6 +166,7 @@ const IconTempAContainer = styled.div`
 `
 
 const ErrorMessage = styled.div`
-    color: red;
+    color: isDay === 1 ? black : white;
     font-size: 1.2rem;
+    font-weight: 600;
 `;

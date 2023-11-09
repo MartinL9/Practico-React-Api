@@ -87,6 +87,7 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+        border-radius: 10px 10px 0 0;
     `;
 
     const Title = styled.h1`

@@ -5,7 +5,7 @@ import TripInfo from "./TripInfo";
 import InfoTransport from "./InfoTransport";
 
 function Transport(props) {
-    const {transportData, selectedLine, setSelectedLine} = props;
+    const { transportData, selectedLine, setSelectedLine } = props;
     const [isTripInfoVisible, setTripInfoVisible] = useState(false);
 
     const handleSelectedLineChange = (newSelectedLine) => {
@@ -21,7 +21,7 @@ function Transport(props) {
             {isTripInfoVisible && (
                 <>
                     <TripInfo selectedTripInfo={transportData} />
-                    <InfoTransport selectedTripInfo={transportData} />
+                    <InfoTransport selectedTripInfo={transportData}/>
                 </>
             )}
         </div>

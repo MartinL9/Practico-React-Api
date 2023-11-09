@@ -11,7 +11,7 @@
     import MinTemp from './MinTemp';
 
     function Clima(props) {
-        const { dailyTemp, maxMinT, highlightValues, selectedLocation, locationQuery, setLocationQuery, locationError } = props;
+        const { dailyTemp, maxMinT, highlightValues, selectedLocation, locationError, setLocationError, fetchWeatherData } = props;
 
         return (
             <div className='clima'>
@@ -23,10 +23,10 @@
                             time={dailyTemp.time} 
                             isDay={dailyTemp.isDay}
                             selectedLocation={selectedLocation}
-                            locationError={locationError} 
+                            locationError={locationError}
+                            setLocationError={setLocationError} 
                             weathercode={dailyTemp.weatherCode} 
-                            locationQuery={locationQuery} 
-                            setLocationQuery={setLocationQuery} 
+                            fetchWeatherData={fetchWeatherData} 
                         />
                     </div>
                     <div className="max-min">
